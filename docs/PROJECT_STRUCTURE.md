@@ -25,6 +25,8 @@
 │   ├── test_controllers.py
 │   └── test_dynamics.py
 ├── results/                 # CSVとPNGの出力先
+├── results_discussion/
+│   └── README.md            # 集計結果と考察
 ├── docs/PROJECT_STRUCTURE.md
 ├── pyproject.toml
 └── README.md

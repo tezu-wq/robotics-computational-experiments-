@@ -28,6 +28,10 @@ The fixed random seed in `experiments/robustness.yaml` makes the generated compa
 
 The study reports MAE, RMSE, signed final error, settling time, integrated squared control effort, peak absolute torque, and success rate. Lower error and input effort are generally desirable, but a lower value in one metric can come at the cost of another.
 
+## Results and discussion
+
+The [results and discussion report](results_discussion/README.md) summarizes the generated data, compares representative conditions, and discusses the tradeoffs and model limitations. It links to the complete trial CSV, summary table, and plots.
+
 ## Limitations
 This is an idealized single-axis rigid-body model with constant inertia and viscous damping. It assumes perfect angle and velocity measurements, no sensor noise or delay, no backlash or Coulomb friction, and no actuator dynamics; only a symmetric torque-command limit is modeled. The inertia is varied while damping stays nominal. The disturbance is a constant torque per trial, randomly sampled from a bounded uniform distribution; it is not a time-varying wind or vibration model. The controller targets a fixed step angle and the simulation uses forward Euler integration. These results compare behavior within those assumptions and do not directly predict performance on a physical robot.
 
