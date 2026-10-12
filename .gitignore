@@ -1,0 +1,10 @@
+
+.venv/
+.venv2/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+results/*.csv
+results/*.png

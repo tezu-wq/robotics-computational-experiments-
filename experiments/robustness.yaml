@@ -1,0 +1,39 @@
+name: robustness
+nominal:
+  inertia: 1.0
+  damping: 0.1
+target_angle: 1.0
+duration: 8.0
+dt: 0.01
+tolerance: 0.02
+initial_angle: 0.0
+initial_velocity: 0.0
+inertia_ratios: [0.7, 0.85, 1.0, 1.15, 1.3]
+# Each repetition draws a constant torque uniformly from [-level, +level].
+disturbance_levels: [0.0, 0.1, 0.2, 0.4, 0.8]
+repetitions: 30
+seed: 20261012
+controllers:
+  - name: PD
+    type: pid
+    parameters:
+      kp: 8.0
+      ki: 0.0
+      kd: 3.0
+      output_limit: 20.0
+      integral_limit: 10.0
+  - name: PID
+    type: pid
+    parameters:
+      kp: 8.0
+      ki: 1.0
+      kd: 3.0
+      output_limit: 20.0
+      integral_limit: 10.0
+  - name: LQR
+    type: lqr
+    parameters:
+      q_angle: 64.0
+      q_velocity: 4.0
+      r_weight: 1.0
+      output_limit: 20.0
